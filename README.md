@@ -93,21 +93,21 @@ void client(int wfd, int rfd) {
 
 ## C Program that illustrate communication between two process using named pipes using Linux API system calls
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <string.h>
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <unistd.h>
+    #include <fcntl.h>
+    #include <sys/types.h>
+    #include <sys/stat.h>
+    #include <string.h>
 
-#define FIFO_FILE "/tmp/my_fifo"
-#define FILE_NAME "hello.txt"
+    #define FIFO_FILE "/tmp/my_fifo"
+    #define FILE_NAME "hello.txt"
 
-void server();
-void client();
+    void server();
+    void client();
 
-int main() {
+    int main() {
     pid_t pid;
 
     // Create FIFO if it doesn't exist
@@ -128,10 +128,10 @@ int main() {
     }
 
     return 0;
-}
+    }
 
-// Server: Reads from hello.txt and writes to FIFO
-void server() {
+    // Server: Reads from hello.txt and writes to FIFO
+    void server() {
     int fifo_fd, file_fd;
     char buffer[1024];
     ssize_t bytes_read;
